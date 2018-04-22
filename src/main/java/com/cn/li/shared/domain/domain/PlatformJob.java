@@ -1,10 +1,11 @@
 package com.cn.li.shared.domain.domain;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name= "platform_job")
@@ -16,12 +17,15 @@ public class PlatformJob extends SQLBaseEntity {
 	private static final long serialVersionUID = 1L;
 	
 	/***岗位*/
-	@Column(name = "name")
-	private String name;
+	@Column(name = "job_name")
+	private String jobName;
 	
-	/***年薪*/
-	@Column(name = "annual_salary")
-	private Float annualSalary;
+	/**月薪浮动*/
+	@Column(name = "month_budget_max")
+	private Float  monthBudgetMax;
+	
+	@Column(name = "month_budget_min")
+	private Float  monthBudgetMin;
 	
 	/**工作地点*/
 	@Column(name = "work_place")
@@ -31,28 +35,41 @@ public class PlatformJob extends SQLBaseEntity {
 	@Column(name = "people_num")
 	private Long peopleNum;
 	
-	@Column(name = "publish_time")
-	private Date publishTime;
+	@JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+	@Column(name = "publish_date")
+	private Date publishDate;
 	
 	/**岗位需求*/
 	@Column(name = "demand")
 	private String demand;
 
-	public String getName() {
-		return name;
+	
+
+	
+
+
+	public String getJobName() {
+		return jobName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
 	}
 
-
-	public Float getAnnualSalary() {
-		return annualSalary;
+	public Float getMonthBudgetMax() {
+		return monthBudgetMax;
 	}
 
-	public void setAnnualSalary(Float annualSalary) {
-		this.annualSalary = annualSalary;
+	public void setMonthBudgetMax(Float monthBudgetMax) {
+		this.monthBudgetMax = monthBudgetMax;
+	}
+
+	public Float getMonthBudgetMin() {
+		return monthBudgetMin;
+	}
+
+	public void setMonthBudgetMin(Float monthBudgetMin) {
+		this.monthBudgetMin = monthBudgetMin;
 	}
 
 	public String getWorkPlace() {
@@ -72,12 +89,15 @@ public class PlatformJob extends SQLBaseEntity {
 		this.peopleNum = peopleNum;
 	}
 
-	public Date getPublishTime() {
-		return publishTime;
+
+	
+	
+	public Date getPublishDate() {
+		return publishDate;
 	}
 
-	public void setPublishTime(Date publishTime) {
-		this.publishTime = publishTime;
+	public void setPublishDate(Date publishDate) {
+		this.publishDate = publishDate;
 	}
 
 	public String getDemand() {
