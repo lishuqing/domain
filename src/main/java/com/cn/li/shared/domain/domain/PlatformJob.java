@@ -40,7 +40,7 @@ public class PlatformJob extends SQLBaseEntity {
 	private Date publishDate;
 	
 	/**岗位需求*/
-	@Column(name = "demand")
+	@Column(name = "demand",columnDefinition ="TEXT",nullable = true)
 	private String demand;
 
 	

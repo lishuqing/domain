@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "platform_new")
@@ -20,11 +21,12 @@ public class PlatformNew extends SQLBaseEntity{
 	private String title;
 	
 	/**新闻简述*/
+	@Size(max = 1000)
 	@Column(name = "description")
 	private String description;
 	
 	/**新闻内容*/
-	@Column(name = "content")
+	@Column(name = "content",columnDefinition ="TEXT",nullable = true)
 	private String content;
 	
 	/**发布日期*/

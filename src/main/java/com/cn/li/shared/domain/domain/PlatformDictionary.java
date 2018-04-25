@@ -18,7 +18,7 @@ public class PlatformDictionary extends SQLBaseEntity implements Serializable{
 	@Column(name = "name",unique = true)
 	private String name;
 	
-	@Column(name = "code")
+	@Column(name = "code",unique = true)
 	private String code;
 	
 	@Column(name = "type")

@@ -44,7 +44,7 @@ public class PlatformJobOffer extends SQLBaseEntity{
 	private Long recruitmentCycle;
 	
 	/**招聘流程*/
-	@Column(name = "recruitment_process")
+	@Column(name = "recruitment_process",columnDefinition ="TEXT",nullable = true)
 	private String recruitmentProcess;
 	
 	/***岗位状态*/
@@ -59,6 +59,10 @@ public class PlatformJobOffer extends SQLBaseEntity{
 	/**猎聘顾问*/
 	@Column(name = "hunting_adviser")
 	private String huntingAdviser;
+	
+	/***猎聘简述*/
+	@Column(name = "description")
+	private String description;
 
 	public String getTitle() {
 		return title;
@@ -134,9 +138,7 @@ public class PlatformJobOffer extends SQLBaseEntity{
 	public void setHuntingAdviser(String huntingAdviser) {
 		this.huntingAdviser = huntingAdviser;
 	}
-
 	
-
 	public String getJobName() {
 		return jobName;
 	}
@@ -152,11 +154,14 @@ public class PlatformJobOffer extends SQLBaseEntity{
 	public void setStatusDictionary(PlatformDictionary statusDictionary) {
 		this.statusDictionary = statusDictionary;
 	}
-	
-	
-	
-	
-	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 	 
 	
