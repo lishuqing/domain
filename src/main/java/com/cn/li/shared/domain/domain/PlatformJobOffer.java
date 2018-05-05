@@ -63,6 +63,10 @@ public class PlatformJobOffer extends SQLBaseEntity{
 	/***猎聘简述*/
 	@Column(name = "description")
 	private String description;
+	
+	/***顾问联系方式*/
+	@Column(name = "adviser_tel")
+	private String adviserTel;
 
 	public String getTitle() {
 		return title;
@@ -161,6 +165,14 @@ public class PlatformJobOffer extends SQLBaseEntity{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getAdviserTel() {
+		return adviserTel;
+	}
+
+	public void setAdviserTel(String adviserTel) {
+		this.adviserTel = adviserTel;
 	}
 	
 	 
